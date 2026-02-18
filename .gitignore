@@ -1,0 +1,17 @@
+# dependencies
+node_modules/
+
+# parcel / build cache
+.parcel-cache/
+
+# build output
+dist/
+
+# environment
+.env
+.parcel-cache/70dba4b52c152bd4-BundleGraph
+.parcel-cache/cfd948ad50eeb106-RequestGraph
+.parcel-cache/d0038ff34e3a5640-AssetGraph
+.parcel-cache/data.mdb
+.parcel-cache/e1c7b57f833f142e-AssetGraph
+.parcel-cache/snapshot-cfd948ad50eeb106.txt
