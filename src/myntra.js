@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import ReactDOM from "react-dom/client"
 import Card from "./components/Card"
 import Footer from "./components/Footer"
@@ -12,13 +12,33 @@ import arr from "./utils/dummy"
 
 
 
-
 function App(){
+
+    let[A,setA]=useState(arr);
+
+    function sortArray(){
+        A.sort((a,b)=> a.price-b.price);
+        
+        setA([...A]) // pass by value abd pass by ref
+    }
+
+    function filter499(){
+        const b=arr.filter((value)=>value.price>499);
+        setA(b);
+    }
+
+    function maxdiscount(){
+        A.sort()
+    }
+    
     return(
         <>
 
         {/* Header */}
         <Header/>
+        <button onClick={sortArray}>Sort by Price</button>
+        <button onClick={filter499}>Price above 499</button>
+        <button onClick={maxdiscount}>Max Discount</button>
 
         {/* //Body */}
         <div className="middle" style={{display:"flex", gap:"10px", flexWrap:"wrap",color:"white"}}>
@@ -31,7 +51,7 @@ function App(){
             <Card cloth="Sleeveless" offer="20-80%off"/> */}
 
             {
-                arr.map((value,index)=> <Card key={index} cloth={value.cloth} offer={value.offer}/>)
+                A.map((value,index)=> <Card key={index} cloth={value.cloth} offer={value.offer} price={value.price}/>)
             }
         </div>
 
